@@ -1,0 +1,9 @@
+interface loopback {{ Loopback.number }}
+ip address {{ Loopback.ipAddr }}
+description {{ Loopback.desc }}
+
+router ospf {{ OSPF.process }}
+{% for net in OSPF.network %}
+network {{ net.net1 }}
+network {{ net.net2 }}
+{% endfor %}

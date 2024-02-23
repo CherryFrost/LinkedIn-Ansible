@@ -1,0 +1,12 @@
+---
+
+- name: "Configure DayZero Config On Site Routers"
+  hosts: "lanRouters"
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: "Configure Physical,Loopback,OSPF"
+      cisco.ios.ios_config:
+        src: "LanRouterDay0.j2"
+        save_when: "changed"

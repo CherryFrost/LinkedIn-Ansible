@@ -1,0 +1,19 @@
+{% for Physical in Gigabit.Ethernet %}
+interface gigabitethernet {{ Physical.Int }}
+ip address {{ Physical.IP }}
+description {{ Physical.Desc }}
+{% endfor %}
+
+
+{% for Lan in Loopback.LoopbackNum %}
+interface loopback {{ Lan.Int }}
+ip address {{ Lan.IP }}
+description {{ Lan.Desc }}
+{% endfor %}
+
+router ospf {{ OSPF.process }}
+{% for net in OSPF.network %}
+network {{ net.net1 }}
+network {{ net.net2 }}
+network {{ net.net3 }}
+{% endfor %}

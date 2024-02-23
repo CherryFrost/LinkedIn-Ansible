@@ -1,0 +1,23 @@
+---
+Gigabit:
+  Ethernet:
+    - Int: "0/0"
+      IP: "40.0.40.2 255.255.255.0"
+      Desc: "vEdge Link"
+
+Loopback:
+  LoopbackNum:
+    - Int: "4"
+      IP: "4.4.4.4 255.255.255.255"
+      Desc: "Jinja rocks!"
+
+    - Int: "44"
+      IP: "44.44.44.44 255.255.255.255"
+      Desc: "Jinja rocks!"
+
+OSPF:
+  process: "1"
+  network:
+    - net1: "40.0.40.0 0.0.0.255 area 0"
+      net2: "4.4.4.4 0.0.0.0 area 0"
+      net3: "44.44.44.44 0.0.0.0 area 0"

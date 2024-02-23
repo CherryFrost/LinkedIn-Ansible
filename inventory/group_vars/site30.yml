@@ -1,0 +1,25 @@
+---
+
+Gigabit:
+  Ethernet:
+    - Int: "0/0"
+      IP: "30.0.30.2 255.255.255.0"
+      Desc: "vEdge Link"
+
+
+Loopback:
+  LoopbackNum:
+    - Int: "3"
+      IP: "3.3.3.3 255.255.255.255"
+      Desc: "LAN 3"
+
+    - Int: "33"
+      IP: "33.33.33.33 255.255.255.255"
+      Desc: "LAN 33"
+
+OSPF:
+  process: "1"
+  network:
+    - net1: "30.0.30.0 0.0.0.255 area 0"
+      net2: "3.3.3.3 0.0.0.0 area 0"
+      net3: "33.33.33.33 0.0.0.0 area 0"

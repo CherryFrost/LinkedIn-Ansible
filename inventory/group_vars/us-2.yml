@@ -1,0 +1,18 @@
+---
+Loopback:
+  LoopbackNum: "100"
+  Description: "Configured with Ansible/Jinja2"
+  IpAddr: "200.200.200.200 255.255.255.255"
+
+
+EIGRP:
+  AS: "100"
+  network: "0.0.0.0 0.0.0.0"
+
+
+BGP:
+  ASN: "200"
+  peers: 
+     - neighbor: "100.100.100.100"
+       peer_asn: "100"
+

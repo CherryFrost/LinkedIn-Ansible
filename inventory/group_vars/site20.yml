@@ -1,0 +1,28 @@
+---
+Gigabit:
+  Ethernet:
+    - Int: "0/0"
+      IP: "20.0.20.2 255.255.255.252"
+      Desc: "vEdge Link"
+
+    - Int: "0/1"
+      IP: "20.0.20.6 255.255.255.252"
+      Desc: "vEdge Link"
+
+Loopback:
+  LoopbackNum:
+    - Int: "2"
+      IP: "2.2.2.2 255.255.255.255"
+      Desc: "LAN 2"
+
+    - Int: "22"
+      IP: "22.22.22.22 255.255.255.255"
+      Desc: "LAN 22"
+
+OSPF:
+  process: "1"
+  network:
+    - net0: "20.0.20.0 0.0.0.3 area 0"
+      net1: "20.0.20.4 0.0.0.3 area 0"
+      net2: "2.2.2.2 0.0.0.0 area 0"
+      net3: "22.22.22.22 0.0.0.0 area 0"
